@@ -6,6 +6,23 @@ cuentas_guardia = [
     {"usuario": "guardia1", "contrasena": "1234"},
     {"usuario": "guardia2", "contrasena": "5678"}]
 
+
+def titulo_parqueadero_uleam(ventana):
+    #Crea el logo de la ULEAM
+    logo_uleam = tk.PhotoImage(file="assets/logo_uleam.png")
+
+    #Titulo de parqueadero uleam
+    Parqueadero_uleam = tk.Label(ventana,
+                     image=logo_uleam,
+                     text=" PARQUEADERO ULEAM", 
+                     bg="gray25", 
+                     fg="red", 
+                     font=("Times New Roman", 60),  
+                     pady=10,
+                     compound="left")
+    Parqueadero_uleam.image = logo_uleam
+    Parqueadero_uleam.pack(pady=(0,60), fill="x")
+
 #Funcion para el login de guardia
 def login_guardia(ventana):
     
@@ -13,19 +30,8 @@ def login_guardia(ventana):
     for borra in ventana.winfo_children():
         borra.destroy()
 
-    logo_uleam = tk.PhotoImage(file="assets/logo_uleam.png")
-
-    #Titulo de parqueadero uleam
-    Parqueadero_uleam = tk.Label(ventana,
-                     image=logo_uleam,
-                     text="PARQUEADERO ULEAM", 
-                     bg="gray25", 
-                     fg="red", 
-                     font=("Times New Roman", 60), 
-                     padx=300, 
-                     pady=10,
-                     compound="left")
-    Parqueadero_uleam.pack(pady=(0,60))
+    #titulo de parqueadero uleam
+    titulo_parqueadero_uleam(ventana)
     
     #Boton para login de guardia
 
@@ -43,15 +49,8 @@ def login(ventana):
     for borra in ventana.winfo_children():
         borra.destroy()
 
-    #Titulo de parqueadero uleam
-    Parqueadero_uleam = tk.Label(ventana, 
-                     text="PARQUEADERO ULEAM", 
-                     bg="gray25", 
-                     fg="white", 
-                     font=("Times New Roman", 60), 
-                     padx=300, 
-                     pady=10)
-    Parqueadero_uleam.pack(pady=(0,60))
+    #titulo de parqueadero uleam
+    titulo_parqueadero_uleam(ventana)
 
     #label e ingreso de usuario
     iniciarsesion_guardia = tk.Label(ventana, 
@@ -122,17 +121,11 @@ def menu_guardia(ventana):
     # Limpiar la ventana
     for borra in ventana.winfo_children():
         borra.destroy()
-        
-    # Título de parqueadero uleam
-    Parqueadero_uleam = tk.Label(ventana, 
-                     text="PARQUEADERO ULEAM", 
-                     bg="gray25", 
-                     fg="white", 
-                     font=("Times New Roman", 60), 
-                     padx=300, 
-                     pady=10)
-    Parqueadero_uleam.pack(pady=(0,10))
 
+    #titulo de parqueadero uleam
+    titulo_parqueadero_uleam(ventana)
+
+    #Boton para cerrar sesion
     btn_volver =tk.Button(ventana, 
                    text="Cerrar Sesión",
                    font=("Times New Roman", 20), 
